@@ -133,7 +133,7 @@ article {
     border-radius: 5px;
     background-color: var(--Soft-red);
     width: 100%;
-    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 hr {
     border: none;
