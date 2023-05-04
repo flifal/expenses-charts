@@ -18,9 +18,10 @@ $(function () {
             $("#can .dv")
                 .eq(x)
                 .html(cal + content);
-
-            $(".am").eq(x).height(0).animate({ height: height }, 300);
-
+            $(".am")
+                .eq(x)
+                .height(0)
+                .animate({ height: height }, { duration: 1000 });
             if (data[x].amount > highest) {
                 highest = data[x].amount;
             }
@@ -28,5 +29,17 @@ $(function () {
         $(".am")
             .eq(data.findIndex((item) => item.amount === highest))
             .css("background-color", "#76b5bc");
+        $("#total").animate(
+            {
+                num: 478.33,
+            },
+            {
+                duration: 1000,
+                step: function (now) {
+                    var formattedNum = now.toFixed(2);
+                    $(this).text("$" + formattedNum);
+                },
+            }
+        );
     });
 });
