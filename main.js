@@ -1,6 +1,5 @@
 $(function () {
     $.getJSON("data.json", function (data) {
-        console.log(data);
         let content = "";
         let cal = "";
         let highest = 0;
